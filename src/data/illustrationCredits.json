@@ -1,0 +1,182 @@
+[
+  {
+    "bugId": "carpenter-ants",
+    "wikipediaTitle": "Black carpenter ant",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Black_carpenter_ant",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/34/Camponotus_pennsylvanicus_casent0103692_profile_1.jpg",
+    "localPath": "/illustrations/carpenter-ants.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "odorous-house-ants",
+    "wikipediaTitle": "Tapinoma sessile",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tapinoma_sessile",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Tapinoma_sessile_casent0005329_profile_1.jpg",
+    "localPath": "/illustrations/odorous-house-ants.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "pavement-ants",
+    "wikipediaTitle": "Tetramorium immigrans",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tetramorium_immigrans",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Tetramorium_immigrans_casent0005827_profile_1.jpg",
+    "localPath": "/illustrations/pavement-ants.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "subterranean-termite-workers",
+    "wikipediaTitle": "Reticulitermes flavipes",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Reticulitermes_flavipes",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Reticulitermes_flavipes_K8085-6.jpg",
+    "localPath": "/illustrations/subterranean-termite-workers.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "termite-swarmers",
+    "wikipediaTitle": "Reticulitermes flavipes",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Reticulitermes_flavipes",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Reticulitermes_flavipes_K8085-6.jpg",
+    "localPath": "/illustrations/termite-swarmers.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "flying-ants",
+    "wikipediaTitle": "Nuptial flight",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Nuptial_flight",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Meat_eater_ant_nest_swarming.jpg",
+    "localPath": "/illustrations/flying-ants.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "spotted-lanternflies",
+    "wikipediaTitle": "Spotted lanternfly",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Spotted_lanternfly",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Spotted_lanternfly_in_BBG_%2842972%29.jpg/3840px-Spotted_lanternfly_in_BBG_%2842972%29.jpg",
+    "localPath": "/illustrations/spotted-lanternflies.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "brown-marmorated-stink-bugs",
+    "wikipediaTitle": "Brown marmorated stink bug",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Brown_marmorated_stink_bug",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Pentatomidae_-_Halyomorpha_halys-001.JPG",
+    "localPath": "/illustrations/brown-marmorated-stink-bugs.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "boxelder-bugs",
+    "wikipediaTitle": "Boisea trivittata",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Boisea_trivittata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Eastern_boxelder_bug_%2841296%29.jpg",
+    "localPath": "/illustrations/boxelder-bugs.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "house-centipedes",
+    "wikipediaTitle": "Scutigera coleoptrata",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Scutigera_coleoptrata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Scutigera_coleoptrata_MHNT_.jpg/3840px-Scutigera_coleoptrata_MHNT_.jpg",
+    "localPath": "/illustrations/house-centipedes.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "silverfish",
+    "wikipediaTitle": "Silverfish",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Silverfish",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/LepismaSaccharina.jpg",
+    "localPath": "/illustrations/silverfish.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "cellar-spiders",
+    "wikipediaTitle": "Pholcus phalangioides",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pholcus_phalangioides",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Pholcus.phalangioides.6905.jpg",
+    "localPath": "/illustrations/cellar-spiders.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "wolf-spiders",
+    "wikipediaTitle": "Wolf spider",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Wolf_spider",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/df/Wolf_spider_tunnel.jpg",
+    "localPath": "/illustrations/wolf-spiders.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "pantry-moths",
+    "wikipediaTitle": "Indianmeal moth",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Indianmeal_moth",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Plodia_interpunctella_-_Indianmeal_moth.jpg/3840px-Plodia_interpunctella_-_Indianmeal_moth.jpg",
+    "localPath": "/illustrations/pantry-moths.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "fruit-flies",
+    "wikipediaTitle": "Drosophila melanogaster",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Drosophila_melanogaster",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Drosophila_melanogaster_Proboscis.jpg/3840px-Drosophila_melanogaster_Proboscis.jpg",
+    "localPath": "/illustrations/fruit-flies.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "drain-flies",
+    "wikipediaTitle": "Clogmia albipunctata",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Clogmia_albipunctata",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Clogmia_albipunctata_P1130225a.jpg",
+    "localPath": "/illustrations/drain-flies.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "cluster-flies",
+    "wikipediaTitle": "Pollenia rudis",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pollenia_rudis",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Fly_June_2013-7.jpg",
+    "localPath": "/illustrations/cluster-flies.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+,
+  {
+    "bugId": "earwigs",
+    "wikipediaTitle": "Forficula auricularia",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Forficula_auricularia",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/European_earwig_%2881241%29.jpg",
+    "localPath": "/illustrations/earwigs.jpg",
+    "source": "Wikipedia / Wikimedia Commons",
+    "licenseNote": "See Wikimedia page for per-file license"
+  }
+
+]

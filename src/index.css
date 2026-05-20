@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SuperSans';
+  src: url('/fonts/SuperSans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuperSans';
+  src: url('/fonts/SuperSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuperSans';
+  src: url('/fonts/SuperSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SuperSans';
+  src: url('/fonts/SuperSans-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply mx-auto w-full max-w-app px-5;
+  }
+
+  .card {
+    @apply bg-card border border-hairline rounded-card;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white font-semibold rounded-card min-h-[56px] w-full flex items-center justify-center px-5;
+  }
+
+  .btn-secondary {
+    @apply text-muted underline underline-offset-4 text-sm;
+  }
+
+  .badge {
+    @apply inline-block text-[11px] uppercase tracking-wide font-semibold px-2 py-1 rounded-full border border-hairline text-muted bg-canvas;
+  }
+}

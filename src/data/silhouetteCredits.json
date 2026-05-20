@@ -1,0 +1,182 @@
+[
+  {
+    "bugId": "carpenter-ants",
+    "uuid": "a1dbdfde-2c4f-4ce9-b10f-cea0c12c51d4",
+    "taxon": "Camponotus",
+    "matchedQuery": "camponotus",
+    "attribution": "Kamil S. Jaron",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/a1dbdfde-2c4f-4ce9-b10f-cea0c12c51d4"
+  }
+,
+  {
+    "bugId": "odorous-house-ants",
+    "uuid": "3251d2ce-356a-4fa5-bd5a-d96b3f6664a5",
+    "taxon": "Tapinoma ibericum",
+    "matchedQuery": "tapinoma",
+    "attribution": "Jitte Groothuis (Jittebug Photography & Creations)",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://www.phylopic.org/images/3251d2ce-356a-4fa5-bd5a-d96b3f6664a5"
+  }
+,
+  {
+    "bugId": "pavement-ants",
+    "uuid": "f4d28481-3b28-4cdb-9877-9b9d4f07e5f2",
+    "taxon": "Martialis heureka",
+    "matchedQuery": "formicidae",
+    "attribution": "Unknown",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/f4d28481-3b28-4cdb-9877-9b9d4f07e5f2"
+  }
+,
+  {
+    "bugId": "subterranean-termite-workers",
+    "uuid": "21003345-fd91-43c1-988d-aafc815fd8e1",
+    "taxon": "Shorea pauciflora",
+    "matchedQuery": "isoptera",
+    "attribution": "Cerlin Ng",
+    "license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "source": "https://www.phylopic.org/images/21003345-fd91-43c1-988d-aafc815fd8e1"
+  }
+,
+  {
+    "bugId": "termite-swarmers",
+    "uuid": "21003345-fd91-43c1-988d-aafc815fd8e1",
+    "taxon": "Shorea pauciflora",
+    "matchedQuery": "isoptera",
+    "attribution": "Cerlin Ng",
+    "license": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "source": "https://www.phylopic.org/images/21003345-fd91-43c1-988d-aafc815fd8e1"
+  }
+,
+  {
+    "bugId": "flying-ants",
+    "uuid": "f4d28481-3b28-4cdb-9877-9b9d4f07e5f2",
+    "taxon": "Martialis heureka",
+    "matchedQuery": "formicidae",
+    "attribution": "Unknown",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/f4d28481-3b28-4cdb-9877-9b9d4f07e5f2"
+  }
+,
+  {
+    "bugId": "spotted-lanternflies",
+    "uuid": "2d1962dc-ddbb-44e0-b143-0bf876b5fbd6",
+    "taxon": "Lycorma delicatula",
+    "matchedQuery": "lycorma delicatula",
+    "attribution": "Andy Wilson",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/2d1962dc-ddbb-44e0-b143-0bf876b5fbd6"
+  }
+,
+  {
+    "bugId": "brown-marmorated-stink-bugs",
+    "uuid": "721678cd-8629-4b4b-85e4-82a3fc1ad156",
+    "taxon": "Halyomorpha halys",
+    "matchedQuery": "halyomorpha halys",
+    "attribution": "Dave Angelini",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/721678cd-8629-4b4b-85e4-82a3fc1ad156"
+  }
+,
+  {
+    "bugId": "boxelder-bugs",
+    "uuid": "a86162a1-8472-4e0a-8b17-8c85bd9451f9",
+    "taxon": "Boisea trivittata",
+    "matchedQuery": "boisea trivittata",
+    "attribution": "Dave Angelini",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/a86162a1-8472-4e0a-8b17-8c85bd9451f9"
+  }
+,
+  {
+    "bugId": "house-centipedes",
+    "uuid": "ed16bf8d-7512-4af0-a50c-3cf34993b701",
+    "taxon": "Scutigera coleoptrata",
+    "matchedQuery": "scutigera coleoptrata",
+    "attribution": "Unknown",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/ed16bf8d-7512-4af0-a50c-3cf34993b701"
+  }
+,
+  {
+    "bugId": "silverfish",
+    "uuid": "45699fa3-9e56-49a6-a843-910464999d87",
+    "taxon": "Lepisma saccharina",
+    "matchedQuery": "lepisma",
+    "attribution": "Gareth Monger",
+    "license": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://www.phylopic.org/images/45699fa3-9e56-49a6-a843-910464999d87"
+  }
+,
+  {
+    "bugId": "cellar-spiders",
+    "uuid": "30f1ff17-1839-451f-872e-8d8b7a29cd75",
+    "taxon": "Pholcus phalangioides",
+    "matchedQuery": "pholcus phalangioides",
+    "attribution": "Sean McCann",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/30f1ff17-1839-451f-872e-8d8b7a29cd75"
+  }
+,
+  {
+    "bugId": "wolf-spiders",
+    "uuid": "7e061777-6fb4-43c4-9ee5-44f4058795bc",
+    "taxon": "Alopecosa",
+    "matchedQuery": "lycosidae",
+    "attribution": "Lafage",
+    "license": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://www.phylopic.org/images/7e061777-6fb4-43c4-9ee5-44f4058795bc"
+  }
+,
+  {
+    "bugId": "pantry-moths",
+    "uuid": "e76891a1-c07c-4709-8c84-5fa86d3744f8",
+    "taxon": "Sabatinca",
+    "matchedQuery": "lepidoptera",
+    "attribution": "Desmond W. Helmore",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://www.phylopic.org/images/e76891a1-c07c-4709-8c84-5fa86d3744f8"
+  }
+,
+  {
+    "bugId": "fruit-flies",
+    "uuid": "b5160ba3-ad86-4123-92a7-1c55122f4a6c",
+    "taxon": "Sophophora melanogaster",
+    "matchedQuery": "drosophila melanogaster",
+    "attribution": "Kamil S. Jaron",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/b5160ba3-ad86-4123-92a7-1c55122f4a6c"
+  }
+,
+  {
+    "bugId": "drain-flies",
+    "uuid": "6669eee2-131b-4bc5-965b-70ea3d7c031b",
+    "taxon": "Phlebotomus papatasi",
+    "matchedQuery": "psychodidae",
+    "attribution": "Kamil S. Jaron",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/6669eee2-131b-4bc5-965b-70ea3d7c031b"
+  }
+,
+  {
+    "bugId": "cluster-flies",
+    "uuid": "98b03327-5213-440a-b6ca-8062e52c1cf5",
+    "taxon": "Calliphoridae",
+    "matchedQuery": "calliphoridae",
+    "attribution": "Unknown",
+    "license": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://www.phylopic.org/images/98b03327-5213-440a-b6ca-8062e52c1cf5"
+  }
+,
+  {
+    "bugId": "earwigs",
+    "uuid": "3fd92960-bac6-4cd4-bcf6-584c27ee2758",
+    "taxon": "Forficula auricularia",
+    "matchedQuery": "forficula auricularia",
+    "attribution": "Unknown",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://www.phylopic.org/images/3fd92960-bac6-4cd4-bcf6-584c27ee2758"
+  }
+
+]

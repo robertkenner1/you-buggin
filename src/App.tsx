@@ -1,5 +1,7 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Shell } from './components/Shell';
 import { ScrollToTop } from './components/ScrollToTop';
 import Triage from './screens/Triage';
@@ -33,6 +35,8 @@ export default function App() {
           </Routes>
         </motion.div>
       </AnimatePresence>
+      <Analytics />
+      <SpeedInsights />
     </Shell>
   );
 }

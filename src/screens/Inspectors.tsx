@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Phone } from '@phosphor-icons/react';
+import { track } from '@vercel/analytics';
 import { inspectors } from '../data/inspectors';
 import type { Inspector } from '../data/inspectors';
 import { Card } from '../components/Card';
@@ -45,9 +46,17 @@ function PhoneGlyph() {
 
 function InspectorRow({ inspector }: { inspector: Inspector }) {
   const telHref = `tel:${inspector.phone.replace(/[^0-9]/g, '')}`;
+  const handleCall = () => {
+    track('call_clicked', {
+      id: inspector.id,
+      name: inspector.name,
+      city: inspector.city,
+      state: inspector.state,
+    });
+  };
   return (
     <li>
-      <Card href={telHref} className="gap-3">
+      <Card href={telHref} onClick={handleCall} className="gap-3">
         <CardText
           title={inspector.name}
           subtitle={`${inspector.city}, ${inspector.state}`}

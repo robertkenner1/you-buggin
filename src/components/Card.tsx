@@ -22,7 +22,7 @@ export function Card({ to, href, onClick, children, className = '' }: CardProps)
   }
   if (href) {
     return (
-      <a href={href} className={cls}>
+      <a href={href} onClick={onClick} className={cls}>
         {children}
       </a>
     );

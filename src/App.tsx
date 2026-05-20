@@ -8,6 +8,7 @@ import Triage from './screens/Triage';
 import Results from './screens/Results';
 import BugDetail from './screens/BugDetail';
 import Inspectors from './screens/Inspectors';
+import About from './screens/About';
 
 const fadeTransition = { duration: 0.32, ease: [0.2, 0.8, 0.2, 1] as const };
 
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/results" element={<Results />} />
             <Route path="/bug/:id" element={<BugDetail />} />
             <Route path="/inspectors" element={<Inspectors />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<Navigate to="/triage/where" replace />} />
           </Routes>
         </motion.div>

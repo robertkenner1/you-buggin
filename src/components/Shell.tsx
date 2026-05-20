@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Bug } from '@phosphor-icons/react';
 
 type ShellProps = {
@@ -7,6 +8,9 @@ type ShellProps = {
 };
 
 export function Shell({ children }: ShellProps) {
+  const location = useLocation();
+  const isTriage = location.pathname.startsWith('/triage');
+
   return (
     <div className="app-shell">
       <header className="pt-6 pb-3 flex justify-center">
@@ -14,7 +18,24 @@ export function Shell({ children }: ShellProps) {
           <Bug size={30} weight="regular" aria-hidden />
         </Link>
       </header>
-      <main>{children}</main>
+      <main className={isTriage ? 'pb-20' : ''}>{children}</main>
+      <AnimatePresence>
+        {isTriage && (
+          <motion.footer
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed bottom-0 inset-x-0 bg-canvas"
+          >
+            <div className="mx-auto max-w-app px-5 py-4 text-center text-sm text-muted">
+              Built by Bobby
+              {' · '}
+              <Link to="/about">About</Link>
+            </div>
+          </motion.footer>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

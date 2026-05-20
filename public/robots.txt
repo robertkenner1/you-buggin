@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://you-buggin.vercel.app/sitemap.xml

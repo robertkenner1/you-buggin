@@ -2,9 +2,11 @@ import { useMemo } from 'react';
 import { Phone } from '@phosphor-icons/react';
 import { track } from '@vercel/analytics';
 import { inspectors } from '../data/inspectors';
-import type { Inspector } from '../data/inspectors';
+import type { Inspector, InspectorCounty } from '../data/inspectors';
 import { Card } from '../components/Card';
 import { CardText } from '../components/CardText';
+
+const COUNTY_ORDER: InspectorCounty[] = ['Westchester', 'Rockland', 'Putnam', 'Fairfield'];
 
 function shuffle<T>(input: T[]): T[] {
   const arr = [...input];
@@ -15,8 +17,15 @@ function shuffle<T>(input: T[]): T[] {
   return arr;
 }
 
+function pickOnePerCounty(all: Inspector[]): Inspector[] {
+  return COUNTY_ORDER.flatMap((county) => {
+    const pool = all.filter((i) => i.county === county);
+    return shuffle(pool).slice(0, 1);
+  });
+}
+
 export default function Inspectors() {
-  const sorted = useMemo(() => shuffle(inspectors), []);
+  const sorted = useMemo(() => pickOnePerCounty(inspectors), []);
 
   return (
     <div className="pt-2 pb-6 flex flex-col gap-6">

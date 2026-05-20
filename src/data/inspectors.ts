@@ -1,9 +1,12 @@
+export type InspectorCounty = 'Westchester' | 'Putnam' | 'Rockland' | 'Fairfield';
+
 export type Inspector = {
   id: string;
   name: string;
   category: 'independent' | 'free' | 'treatment';
   state: 'NY' | 'CT';
   city: string;
+  county: InspectorCounty;
   responseTime: string;
   rating: number;
   phone: string;
@@ -17,6 +20,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Ardsley',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(914) 371-6871',
@@ -27,6 +31,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Bronxville',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 5,
     phone: '(914) 674-1056',
@@ -37,6 +42,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Buchanan',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 4.8,
     phone: '(800) 479-2284',
@@ -47,6 +53,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Brewster',
+    county: 'Putnam',
     responseTime: 'Same day',
     rating: 4.8,
     phone: '(914) 350-6028',
@@ -57,6 +64,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Hartsdale',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(914) 949-2149',
@@ -67,6 +75,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Hawthorne',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(914) 712-6333',
@@ -77,6 +86,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Larchmont',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 5,
     phone: '(914) 256-2506',
@@ -87,6 +97,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Mahopac',
+    county: 'Putnam',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(845) 628-9026',
@@ -97,6 +108,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Mamaroneck',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(914) 239-3831',
@@ -107,6 +119,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'New City',
+    county: 'Rockland',
     responseTime: 'Same day',
     rating: 5,
     phone: '(845) 639-9670',
@@ -117,6 +130,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'New Windsor',
+    county: 'Rockland',
     responseTime: 'Same day',
     rating: 4.9,
     phone: '(845) 565-5566',
@@ -127,6 +141,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'NY',
     city: 'Scarsdale',
+    county: 'Westchester',
     responseTime: 'Same day',
     rating: 5,
     phone: '(914) 431-4019',
@@ -137,6 +152,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'CT',
     city: 'Fairfield',
+    county: 'Fairfield',
     responseTime: 'Same day',
     rating: 4.7,
     phone: '(203) 256-1200',
@@ -147,6 +163,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'CT',
     city: 'Orange',
+    county: 'Fairfield',
     responseTime: 'Same day',
     rating: 4.7,
     phone: '(203) 931-7378',
@@ -157,6 +174,7 @@ export const inspectors: Inspector[] = [
     category: 'treatment',
     state: 'CT',
     city: 'Wilton',
+    county: 'Fairfield',
     responseTime: 'Same day',
     rating: 5,
     phone: '(203) 684-2656',

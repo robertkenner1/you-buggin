@@ -1,22 +1,22 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useMemo } from 'react';
-import { rankBugs, focusBugs, focusHeadline } from '../lib/ranking';
-import type { RankedBug, FocusKey } from '../lib/ranking';
-
-const FOCUS_KEYS: FocusKey[] = ['swarmers', 'wood-pests', 'tiny-ants', 'tiny-flies'];
-
-function asFocus(v: string | null): FocusKey | null {
-  return v && (FOCUS_KEYS as string[]).includes(v) ? (v as FocusKey) : null;
-}
+import { rankBugs, focusHeadline } from '../lib/ranking';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
 import type { TriageWings } from '../store/triage';
 import { Card } from '../components/Card';
 import { CardText } from '../components/CardText';
 import { Silhouette } from '../components/Silhouette';
 
-const LOCATIONS: BugLocation[] = ['kitchen', 'bathroom', 'basement', 'attic', 'floor', 'wall'];
+const LOCATIONS: BugLocation[] = [
+  'kitchen',
+  'bathroom',
+  'basement',
+  'attic',
+  'living-area',
+  'exterior',
+];
 const GROUPS: BugGroupSize[] = ['few', 'group', 'trail', 'swarm'];
-const WINGS: TriageWings[] = ['yes', 'no', 'unsure'];
+const WINGS: TriageWings[] = ['live-wings', 'shed-wings', 'no-wings', 'unsure'];
 
 function asLocation(v: string | null): BugLocation | null {
   return v && (LOCATIONS as string[]).includes(v) ? (v as BugLocation) : null;
@@ -30,18 +30,17 @@ function asWings(v: string | null): TriageWings | null {
 
 export default function Results() {
   const [params] = useSearchParams();
-  const focus = asFocus(params.get('focus'));
   const where = asLocation(params.get('where'));
   const count = asGroup(params.get('count'));
   const wings = asWings(params.get('wings'));
 
-  const ranked: RankedBug[] = useMemo(() => {
-    if (focus) return focusBugs(focus);
-    return rankBugs({ where, count, wings });
-  }, [where, count, wings, focus]);
+  const result = useMemo(() => rankBugs({ where, count, wings }), [where, count, wings]);
+  const { ranked, confidence, focus } = result;
 
   const recap = focus
     ? focusHeadline(focus)
+    : confidence === 'medium'
+    ? 'Which one are you seeing?'
     : ranked.length === 1
     ? 'It might be this.'
     : "It could be one of these.";

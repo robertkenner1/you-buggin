@@ -2,7 +2,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, type ReactNode } from 'react';
 import { Card } from '../components/Card';
 import { CardText } from '../components/CardText';
-import { detectFocus } from '../lib/ranking';
+import { rankBugs } from '../lib/ranking';
 import { useTriage } from '../store/triage';
 import type { TriageWings } from '../store/triage';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
@@ -12,10 +12,12 @@ type StepName = 'where' | 'count' | 'wings';
 const STEP_ORDER: StepName[] = ['where', 'count', 'wings'];
 
 const WHERE_OPTIONS: Array<{ value: BugLocation; label: string }> = [
-  { value: 'kitchen', label: 'In my kitchen' },
-  { value: 'bathroom', label: 'In my bathroom' },
+  { value: 'kitchen', label: 'In the kitchen' },
+  { value: 'bathroom', label: 'In the bathroom' },
   { value: 'basement', label: 'In the basement' },
-  { value: 'attic', label: 'Attic or upstairs' },
+  { value: 'attic', label: 'In the attic' },
+  { value: 'living-area', label: 'In a bedroom or living room' },
+  { value: 'exterior', label: 'At a window, door, or outside wall' },
 ];
 
 const COUNT_OPTIONS: Array<{ value: BugGroupSize; label: string }> = [
@@ -25,15 +27,16 @@ const COUNT_OPTIONS: Array<{ value: BugGroupSize; label: string }> = [
 ];
 
 const WINGS_OPTIONS: Array<{ value: TriageWings; label: string }> = [
-  { value: 'yes', label: 'Yep, wings' },
-  { value: 'no', label: 'No wings' },
+  { value: 'live-wings', label: 'It had wings' },
+  { value: 'shed-wings', label: 'Just shed wings nearby' },
+  { value: 'no-wings', label: 'No wings' },
   { value: 'unsure', label: "Couldn't tell" },
 ];
 
 const STEP_LABEL: Record<StepName, string> = {
   where: "Where'd you see it?",
   count: 'How many were there?',
-  wings: 'Did it have wings?',
+  wings: 'Any wings or wing pieces?',
 };
 
 export default function Triage() {
@@ -71,12 +74,13 @@ export default function Triage() {
       navigate('/triage/where', { replace: true });
       return;
     }
-    const focus = detectFocus(where, count, wings);
-    if (focus) {
-      navigate(`/results?focus=${focus}`);
+    const result = rankBugs({ where, count, wings });
+    const params = new URLSearchParams({ where, count, wings });
+
+    if (result.confidence === 'high' && result.ranked.length > 0) {
+      navigate(`/bug/${result.ranked[0].bug.id}`);
       return;
     }
-    const params = new URLSearchParams({ where, count, wings });
     navigate(`/results?${params.toString()}`);
   }
 

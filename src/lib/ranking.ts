@@ -4,6 +4,16 @@ import type { TriageWings } from '../store/triage';
 
 export type RankedBug = { bug: Bug; score: number };
 
+export type Confidence = 'high' | 'medium' | 'low' | 'none';
+
+export type FocusKey = 'swarmers' | 'wood-pests' | 'tiny-ants' | 'tiny-flies';
+
+export type RankingResult = {
+  ranked: RankedBug[];
+  confidence: Confidence;
+  focus: FocusKey | null;
+};
+
 export type RankingInput = {
   where: BugLocation | null;
   count: BugGroupSize | null;
@@ -13,40 +23,37 @@ export type RankingInput = {
 
 const SCORE_THRESHOLD = 4;
 const MAX_RESULTS = 3;
+const HIGH_CONFIDENCE_GAP = 3;
 
-export function rankBugs({ where, count, wings, month }: RankingInput): RankedBug[] {
-  const currentMonth = month ?? new Date().getMonth() + 1;
-
-  const ranked = bugs
-    .map((bug) => {
-      let score = 0;
-
-      if (where && bug.locations.includes(where)) score += 3;
-      if (count && bug.groupSize.includes(count)) score += 2;
-
-      if (wings) {
-        if (bug.hasWings === 'sometimes') {
-          score += 1;
-        } else if (wings === 'yes' && bug.hasWings === 'yes') {
-          score += 2;
-        } else if (wings === 'no' && bug.hasWings === 'no') {
-          score += 2;
-        } else if (wings === 'unsure') {
-          score += 1;
-        }
-      }
-
-      if (bug.seasonalPeak.includes(currentMonth)) score += 2;
-
-      return { bug, score };
-    })
-    .filter((r) => r.score >= SCORE_THRESHOLD)
-    .sort((a, b) => b.score - a.score);
-
-  return ranked.slice(0, MAX_RESULTS);
+function wingsAllows(bug: Bug, wings: TriageWings | null): boolean {
+  if (!wings || wings === 'unsure') return true;
+  if (wings === 'shed-wings') return bug.shedsWings;
+  if (wings === 'live-wings') return bug.hasWings === 'yes' || bug.hasWings === 'sometimes';
+  if (wings === 'no-wings') return bug.hasWings === 'no' || bug.hasWings === 'sometimes';
+  return true;
 }
 
-export type FocusKey = 'swarmers' | 'wood-pests' | 'tiny-ants' | 'tiny-flies';
+function scoreBug(
+  bug: Bug,
+  where: BugLocation | null,
+  count: BugGroupSize | null,
+  month: number
+): number {
+  let score = 0;
+  if (where && bug.locations.includes(where)) score += 3;
+  if (count && bug.groupSize.includes(count)) score += 2;
+  if (bug.seasonalPeak.includes(month)) score += 2;
+  return score;
+}
+
+function computeConfidence(ranked: RankedBug[]): Confidence {
+  if (ranked.length === 0) return 'none';
+  if (ranked.length === 1) return 'high';
+  const gap = ranked[0].score - ranked[1].score;
+  if (gap >= HIGH_CONFIDENCE_GAP) return 'high';
+  if (ranked.length === 2) return 'medium';
+  return 'low';
+}
 
 type FocusCluster = {
   bugIds: string[];
@@ -56,23 +63,23 @@ type FocusCluster = {
 const FOCUS_CLUSTERS: Record<FocusKey, FocusCluster> = {
   swarmers: {
     bugIds: ['termite-swarmers', 'flying-ants'],
-    headline: "It's one of these two.",
+    headline: 'Which one are you seeing?',
   },
   'wood-pests': {
     bugIds: ['subterranean-termite-workers', 'carpenter-ants'],
-    headline: 'Probably one of these two.',
+    headline: 'Which one are you seeing?',
   },
   'tiny-ants': {
     bugIds: ['odorous-house-ants', 'pavement-ants', 'carpenter-ants'],
-    headline: 'Probably one of these.',
+    headline: 'Which one are you seeing?',
   },
   'tiny-flies': {
     bugIds: ['fruit-flies', 'drain-flies'],
-    headline: "It's one of these two.",
+    headline: 'Which one are you seeing?',
   },
 };
 
-export function focusBugs(key: FocusKey): RankedBug[] {
+function focusBugs(key: FocusKey): RankedBug[] {
   const cluster = FOCUS_CLUSTERS[key];
   return cluster.bugIds
     .map((id) => bugs.find((b) => b.id === id))
@@ -90,26 +97,42 @@ export function detectFocus(
   wings: TriageWings | null
 ): FocusKey | null {
   if (!where || !count || !wings) return null;
-  // Tiny flies in kitchen or bathroom — most common
+  if (wings === 'shed-wings') return 'swarmers';
   if (
-    wings === 'yes' &&
+    wings === 'live-wings' &&
     count === 'group' &&
     (where === 'kitchen' || where === 'bathroom')
   ) {
     return 'tiny-flies';
   }
-  // Termite swarmers vs flying ants — winged group elsewhere
-  if (wings === 'yes' && count === 'group') {
-    return 'swarmers';
-  }
-  // Tiny indoor ant trail
-  if (wings === 'no' && count === 'trail' && (where === 'kitchen' || where === 'floor')) {
-    return 'tiny-ants';
-  }
-  // Termite workers vs carpenter ants in damp wood
-  if (wings === 'no' && count === 'few' && (where === 'basement' || where === 'wall' || where === 'floor')) {
-    return 'wood-pests';
-  }
+  if (wings === 'live-wings' && count === 'group') return 'swarmers';
+  if (wings === 'no-wings' && count === 'trail' && where === 'kitchen') return 'tiny-ants';
+  if (wings === 'no-wings' && count === 'few' && where === 'basement') return 'wood-pests';
   return null;
 }
 
+export function rankBugs({ where, count, wings, month }: RankingInput): RankingResult {
+  const currentMonth = month ?? new Date().getMonth() + 1;
+
+  const focus = detectFocus(where, count, wings);
+  if (focus) {
+    return {
+      ranked: focusBugs(focus),
+      confidence: 'medium',
+      focus,
+    };
+  }
+
+  const ranked = bugs
+    .filter((bug) => wingsAllows(bug, wings))
+    .map((bug) => ({ bug, score: scoreBug(bug, where, count, currentMonth) }))
+    .filter((r) => r.score >= SCORE_THRESHOLD)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, MAX_RESULTS);
+
+  return {
+    ranked,
+    confidence: computeConfidence(ranked),
+    focus: null,
+  };
+}

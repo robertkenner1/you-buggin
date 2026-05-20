@@ -22,7 +22,7 @@ export default function BugDetail() {
     );
   }
 
-  const showFooter = bug.severity !== 'relief';
+  const showFooter = bug.recommendPro;
   const [zoomOpen, setZoomOpen] = useState(false);
 
   return (

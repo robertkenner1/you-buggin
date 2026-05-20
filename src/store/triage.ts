@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
 
-export type TriageWings = 'yes' | 'no' | 'unsure';
+export type TriageWings = 'live-wings' | 'shed-wings' | 'no-wings' | 'unsure';
 
 type TriageState = {
   where: BugLocation | null;

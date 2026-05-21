@@ -75,7 +75,7 @@ export default function About() {
           This is built by one person and still finding its feet. If something feels
           off, or you have a story about a bug or an exterminator, send it to{' '}
           <a
-            href="mailto:hello@youbuggin.app?subject=you%20buggin%3F%20feedback"
+            href="mailto:hello@youbuggin.app?subject=Feedback"
             className="underline"
           >
             hello@youbuggin.app

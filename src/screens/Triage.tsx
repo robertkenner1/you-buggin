@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Card } from '../components/Card';
 import { CardStack } from '../components/CardStack';
@@ -7,14 +6,12 @@ import { CardText } from '../components/CardText';
 import { useSetPageTitle } from '../components/PageHeader';
 import { rankBugs } from '../lib/ranking';
 import { useTriage } from '../store/triage';
-import type { TriageWings } from '../store/triage';
+import type { TriageWings, TriageStep } from '../store/triage';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
 
 const stepTransition = { duration: 0.18, ease: [0.2, 0.8, 0.2, 1] as const };
 
-type StepName = 'where' | 'count' | 'wings';
-
-const STEP_ORDER: StepName[] = ['where', 'count', 'wings'];
+const STEP_ORDER: TriageStep[] = ['where', 'count', 'wings'];
 
 const WHERE_OPTIONS: Array<{ value: BugLocation; label: string }> = [
   { value: 'kitchen', label: 'Kitchen' },
@@ -38,7 +35,7 @@ const WINGS_OPTIONS: Array<{ value: TriageWings; label: string }> = [
   { value: 'unsure', label: "Couldn't tell" },
 ];
 
-const STEP_LABEL: Record<StepName, string> = {
+const STEP_LABEL: Record<TriageStep, string> = {
   where: "Where'd you see it?",
   count: 'How many were there?',
   wings: 'Any wings or wing pieces?',
@@ -47,7 +44,7 @@ const STEP_LABEL: Record<StepName, string> = {
 export default function Triage() {
   const navigate = useNavigate();
   const triage = useTriage();
-  const [stepName, setStepName] = useState<StepName>('where');
+  const stepName = triage.step;
 
   const index = STEP_ORDER.indexOf(stepName);
   const isLast = index === STEP_ORDER.length - 1;
@@ -72,7 +69,7 @@ export default function Triage() {
     if (isLast) {
       submit();
     } else {
-      setStepName(STEP_ORDER[index + 1]);
+      triage.setStep(STEP_ORDER[index + 1]);
     }
   }
 

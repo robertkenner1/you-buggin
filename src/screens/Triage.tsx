@@ -36,7 +36,7 @@ const WINGS_OPTIONS: Array<{ value: TriageWings; label: string }> = [
 ];
 
 const STEP_LABEL: Record<TriageStep, string> = {
-  where: "Where'd you see it?",
+  where: "Where's the bug?",
   count: 'How many were there?',
   wings: 'Any wings or wing pieces?',
 };

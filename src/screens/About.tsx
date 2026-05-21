@@ -68,6 +68,21 @@ export default function About() {
           across sessions.
         </p>
       </section>
+
+      <section className="flex flex-col gap-3">
+        <h5 className="text-base font-semibold">Got thoughts?</h5>
+        <p className="text-base leading-relaxed">
+          This is built by one person and still finding its feet. If something feels
+          off, or you have a story about a bug or an exterminator, send it to{' '}
+          <a
+            href="mailto:hello@youbuggin.app?subject=you%20buggin%3F%20feedback"
+            className="underline"
+          >
+            hello@youbuggin.app
+          </a>
+          . Every note gets read.
+        </p>
+      </section>
     </article>
   );
 }

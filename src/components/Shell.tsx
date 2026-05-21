@@ -37,6 +37,8 @@ export function Shell({ children }: ShellProps) {
               Bobby built it
               <span className="px-1.5">·</span>
               <Link to="/about">About</Link>
+              <span className="px-1.5">·</span>
+              <a href="mailto:hello@youbuggin.app?subject=you%20buggin%3F%20feedback">Feedback</a>
             </div>
           </motion.footer>
         )}

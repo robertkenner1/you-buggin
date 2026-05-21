@@ -16,7 +16,6 @@ Built for the catastrophizer: the person who sees a bug, immediately worst-cases
 | [ux/SCREENS.md](./ux/SCREENS.md) | The vertical view of the product. Each screen's purpose, what it is and is not. Check before adding anything to a screen. |
 | [ux/USER_FLOWS.md](./ux/USER_FLOWS.md) | The horizontal view. Primary, secondary, and edge user flows. Categorized so we can keep flows tight. Any new feature should slot into an existing flow. |
 | [ux/TESTING.md](./ux/TESTING.md) | How to walk the triage matrix. Direct-URL shortcuts to skip clicks. Confidence-routing test cases. |
-| [strategy/VERTICALS.md](./strategy/VERTICALS.md) | Other use cases / verticals that fit the same niche pattern (mold, leaks, snake ID, wall sounds, etc.). The product as a template. |
 
 ---
 

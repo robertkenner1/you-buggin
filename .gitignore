@@ -19,3 +19,6 @@ vite.config.js
 .claude
 .vscode
 .idea
+
+# Private strategy docs (kept out of public repo)
+strategy/

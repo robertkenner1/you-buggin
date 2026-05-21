@@ -1,5 +1,5 @@
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Card } from '../components/Card';
 import { CardStack } from '../components/CardStack';
@@ -45,40 +45,16 @@ const STEP_LABEL: Record<StepName, string> = {
 };
 
 export default function Triage() {
-  const { step } = useParams<{ step?: string }>();
   const navigate = useNavigate();
   const triage = useTriage();
+  const [stepName, setStepName] = useState<StepName>('where');
 
-  if (!step || !(STEP_ORDER as string[]).includes(step)) {
-    return <Navigate to="/triage/where" replace />;
-  }
-
-  const stepName = step as StepName;
   const index = STEP_ORDER.indexOf(stepName);
   const isLast = index === STEP_ORDER.length - 1;
 
-  useEffect(() => {
-    if (stepName === 'count' && !triage.where) {
-      navigate('/triage/where', { replace: true });
-    } else if (stepName === 'wings' && (!triage.where || !triage.count)) {
-      navigate(triage.where ? '/triage/count' : '/triage/where', { replace: true });
-    }
-  }, [stepName, triage.where, triage.count, navigate]);
-
-  function advance(nextStep: StepName | null) {
-    if (nextStep) {
-      navigate(`/triage/${nextStep}`);
-    } else {
-      submit();
-    }
-  }
-
   function submit() {
     const { where, count, wings } = useTriage.getState();
-    if (!where || !count || !wings) {
-      navigate('/triage/where', { replace: true });
-      return;
-    }
+    if (!where || !count || !wings) return;
     const result = rankBugs({ where, count, wings });
     const params = new URLSearchParams({ where, count, wings });
 
@@ -93,7 +69,11 @@ export default function Triage() {
     if (stepName === 'where') triage.setWhere(value as BugLocation);
     if (stepName === 'count') triage.setCount(value as BugGroupSize);
     if (stepName === 'wings') triage.setWings(value as TriageWings);
-    advance(isLast ? null : STEP_ORDER[index + 1]);
+    if (isLast) {
+      submit();
+    } else {
+      setStepName(STEP_ORDER[index + 1]);
+    }
   }
 
   const stepOptions: Array<{ value: string; label: string }> =
@@ -125,4 +105,3 @@ export default function Triage() {
     </div>
   );
 }
-

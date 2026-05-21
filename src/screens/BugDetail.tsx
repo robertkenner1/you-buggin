@@ -28,7 +28,7 @@ export default function BugDetail() {
 
   return (
     <>
-    <article className={`${showFooter ? 'pb-24' : 'pb-6'} flex flex-col gap-8 min-w-0`}>
+    <article className={`${showFooter ? 'pb-36' : 'pb-6'} flex flex-col gap-8 min-w-0`}>
         <div className="grid grid-cols-2 gap-2 min-w-0">
           <button
             type="button"
@@ -55,30 +55,29 @@ export default function BugDetail() {
           </div>
         </div>
 
-        <Section title="How to spot it">
-          <BulletList items={bug.howToSpotIt} />
+        <Section title="What to look for">
+          <BulletList items={bug.whatToLookFor} />
         </Section>
 
-        <Section title="How to be sure">
-          <BulletList items={bug.howToBeSure} />
-        </Section>
-
-        <Section title="What it actually means">
+        <Section title="What's going on">
           <p className="text-base leading-relaxed">{bug.whatItMeansLong}</p>
         </Section>
 
-        <Section title="When to call someone">
+        <Section title="What to do">
           <p className="text-base leading-relaxed">{bug.whenToCall}</p>
         </Section>
 
     </article>
 
     {showFooter && (
-      <div className="fixed bottom-0 inset-x-0 pb-6 pt-4 bg-gradient-to-t from-canvas via-canvas to-transparent">
-        <div className="mx-auto max-w-app px-5">
-          <Link to="/inspectors" className="btn-primary">
-            Call an exterminator
-          </Link>
+      <div className="fixed bottom-0 inset-x-0">
+        <div className="h-6 bg-gradient-to-t from-canvas to-transparent" />
+        <div className="bg-canvas">
+          <div className="mx-auto max-w-app px-5 pt-4 pb-6">
+            <Link to="/inspectors" className="btn-primary">
+              Call an exterminator
+            </Link>
+          </div>
         </div>
       </div>
     )}
@@ -144,7 +143,7 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((s, i) => (
         <li key={i} className="text-base leading-relaxed flex gap-3">
           <span
-            className="shrink-0 w-1.5 h-1.5 rounded-full border border-ink mt-[9px]"
+            className="shrink-0 w-1.5 h-1.5 rounded-full border border-ink mt-[10px]"
             aria-hidden
           />
           <span>{s}</span>

@@ -10,9 +10,10 @@ Built for the catastrophizer: the person who sees a bug, immediately worst-cases
 
 | Doc | What's in it |
 |---|---|
-| [PERSONAS.md](./PERSONAS.md) | The expert voice (the exterminator who picks up the phone) and the user personas (primary: the catastrophizer). Check every line of user-facing copy against these. |
-| [USER_FLOWS.md](./USER_FLOWS.md) | Primary, secondary, and edge user flows. Categorized so we can keep flows tight. Any new feature should slot into an existing flow or have a clear reason to add a new one. |
-| [TESTING.md](./TESTING.md) | How to walk the triage matrix. Direct-URL shortcuts to skip clicks. Confidence-routing test cases. |
+| [ux/PERSONAS.md](./ux/PERSONAS.md) | The expert voice (the exterminator who picks up the phone) and the user personas (primary: the catastrophizer). Check every line of user-facing copy against these. |
+| [ux/SCREENS.md](./ux/SCREENS.md) | The vertical view of the product. Each screen's purpose, what it is and is not. Check before adding anything to a screen. |
+| [ux/USER_FLOWS.md](./ux/USER_FLOWS.md) | The horizontal view. Primary, secondary, and edge user flows. Categorized so we can keep flows tight. Any new feature should slot into an existing flow. |
+| [ux/TESTING.md](./ux/TESTING.md) | How to walk the triage matrix. Direct-URL shortcuts to skip clicks. Confidence-routing test cases. |
 
 ---
 
@@ -36,7 +37,7 @@ These come out of lived feedback, not theory. Don't drift from them without a st
 
 8. **No em dashes.** Em dashes read as AI-written. Use periods, commas, ands, or parentheses. (Hyphens in compound words are fine.)
 
-9. **Voice: simple but mature.** Plain English without dumbing down. The expert voice from PERSONAS.md is the model.
+9. **Voice: simple but mature.** Plain English without dumbing down. The expert voice from ux/PERSONAS.md is the model.
 
 10. **Hyperlocal.** Service area is Westchester, Rockland, Putnam (NY), Fairfield County (CT). Geo-target ads. International traffic in analytics is noise.
 
@@ -77,7 +78,7 @@ Key files:
 - 15 inspectors hand-verified from Google Places, trimmed to 1-per-county per visit (4 shown)
 - Vercel Analytics + Speed Insights live (with `call_clicked` custom event)
 - SEO meta updated to name worst case without denying it ("You buggin? Could be termites, could be ants.")
-- USER_FLOWS.md + PERSONAS.md + TESTING.md documented
+- ux/ folder with PERSONAS, USER_FLOWS, SCREENS, TESTING documented
 
 Open / next:
 - Rewrite all 17 bug pages in expert voice (in progress)

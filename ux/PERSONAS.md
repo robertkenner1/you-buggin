@@ -4,6 +4,33 @@ The voice we write IN and the people we write FOR. Every content decision (bug p
 
 ---
 
+## The niche
+
+This product is built for a very specific moment, not a general audience.
+
+**Who uses it:** someone who just saw a bug in their home and pulled out their phone right then. They are physically in the room with the bug. They have it in sight (or just saw it move) as they triage. The reason they have the phone in their hand is the bug.
+
+**Why this is a niche:** the product would not make sense to anyone outside that moment. A desktop researcher casually browsing pest info would find the experience strangely terse and impossible to navigate. That's intentional. The product is **contextual** — it only works because the context is *phone in hand, bug in room, anxiety high, decision needed in the next two minutes*.
+
+**Who it is NOT for:**
+- Pre-emptive learners researching bugs before they see one
+- Desktop researchers casually browsing pest info
+- People in the abstract between sightings
+- Educators teaching entomology
+- Pest control pros doing identification work
+- Anyone using this on a computer
+
+**Consequences of the niche:**
+- **Mobile-only optimization** is a consequence of the niche, not a constraint. The user is on their phone. There is no desktop version because there is no desktop user.
+- **Short copy, big tap targets, vertical flow** — designed for one-handed phone use while standing in front of a bug.
+- **Three observational questions** — because the user is looking at the bug as they answer. They can describe what they're seeing, but they cannot identify it (that is the entire reason they are here).
+- **No history, no saved sessions, no accounts** — the moment is one-time. Each panic gets its own walk-through.
+- **No "browse all bugs" page** — that would imply a use case that isn't ours.
+
+If someone is using this tool while sitting at their computer with no bug present, the product is failing them. They should be on PSU Extension or Cornell NYSIPM, not here.
+
+---
+
 ## The expert voice
 
 ### Who: the exterminator who picks up the phone

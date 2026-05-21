@@ -2,6 +2,8 @@
 
 A panic-moment bug ID tool for homeowners in Westchester, Rockland, Putnam (NY) and Fairfield County (CT). Live at **https://youbuggin.app**.
 
+**The niche, stated plainly:** this is a contextual tool for someone holding their phone in the room with the bug they just saw. Not a reference site. Not a desktop tool. Not for pre-emptive learners or casual browsers. Mobile-only by design. If a user has no bug in front of them, they should be on PSU Extension or Cornell NYSIPM, not here. See [ux/PERSONAS.md](./ux/PERSONAS.md) for the full niche statement.
+
 Built for the catastrophizer: the person who sees a bug, immediately worst-cases ("termites!"), and needs a calm honest second opinion before they panic-call an exterminator. The product structure is the panic-to-phew arc: 3 observational triage questions → 2-3 candidate bugs → bug detail → optional inspector call.
 
 ---

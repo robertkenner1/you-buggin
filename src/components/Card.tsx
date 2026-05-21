@@ -9,7 +9,7 @@ type CardProps = {
   className?: string;
 };
 
-const base = 'card p-4 flex items-center min-h-[56px]';
+const base = 'card p-4 flex items-center min-h-[56px] w-full';
 
 export function Card({ to, href, onClick, children, className = '' }: CardProps) {
   const cls = `${base} ${className}`.trim();

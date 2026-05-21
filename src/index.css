@@ -6,25 +6,25 @@
   font-family: 'SuperSans';
   src: url('/fonts/SuperSans-Light.otf') format('opentype');
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'SuperSans';
   src: url('/fonts/SuperSans-Regular.otf') format('opentype');
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'SuperSans';
   src: url('/fonts/SuperSans-Medium.otf') format('opentype');
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'SuperSans';
   src: url('/fonts/SuperSans-SemiBold.otf') format('opentype');
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
 }
 
 @layer base {

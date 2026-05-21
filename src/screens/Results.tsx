@@ -4,8 +4,10 @@ import { rankBugs, focusHeadline } from '../lib/ranking';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
 import type { TriageWings } from '../store/triage';
 import { Card } from '../components/Card';
+import { CardStack } from '../components/CardStack';
 import { CardText } from '../components/CardText';
 import { Silhouette } from '../components/Silhouette';
+import { useSetPageTitle } from '../components/PageHeader';
 
 const LOCATIONS: BugLocation[] = [
   'kitchen',
@@ -45,12 +47,10 @@ export default function Results() {
     ? 'It might be this.'
     : "It could be one of these.";
 
-  return (
-    <div className="pt-2 pb-6 flex flex-col gap-6">
-        <header className="text-center">
-          <h1 className="text-xl font-semibold leading-tight">{recap}</h1>
-        </header>
+  useSetPageTitle(recap);
 
+  return (
+    <div className="pb-6 flex flex-col gap-6">
         {ranked.length === 0 ? (
           <div className="card p-5 flex flex-col gap-3">
             <p className="text-base font-medium">Nothing's a clean match.</p>
@@ -67,24 +67,20 @@ export default function Results() {
             </div>
           </div>
         ) : (
-          <ul className="flex flex-col gap-3">
+          <CardStack>
             {ranked.map(({ bug }) => (
-              <li key={bug.id}>
-                <Card to={`/bug/${bug.id}`} className="gap-8">
-                  <CardText title={bug.commonName} subtitle={bug.whatItMeans} />
-                  <Silhouette
-                    bugId={bug.id}
-                    className="w-16 h-16 shrink-0"
-                  />
-                </Card>
-              </li>
-            ))}
-            <li>
-              <Card to="/inspectors" className="text-left">
-                <CardText title="It's none of these" />
+              <Card key={bug.id} to={`/bug/${bug.id}`} className="gap-8">
+                <CardText title={bug.commonName} subtitle={bug.whatItMeans} />
+                <Silhouette
+                  bugId={bug.id}
+                  className="w-11 h-11 shrink-0"
+                />
               </Card>
-            </li>
-          </ul>
+            ))}
+            <Card to="/inspectors" className="text-left">
+              <CardText title="It's none of these" />
+            </Card>
+          </CardStack>
         )}
 
     </div>

@@ -1,34 +1,39 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { useEffect, type ReactNode } from 'react';
+import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Card } from '../components/Card';
+import { CardStack } from '../components/CardStack';
 import { CardText } from '../components/CardText';
+import { useSetPageTitle } from '../components/PageHeader';
 import { rankBugs } from '../lib/ranking';
 import { useTriage } from '../store/triage';
 import type { TriageWings } from '../store/triage';
 import type { BugGroupSize, BugLocation } from '../data/bugs';
+
+const stepTransition = { duration: 0.18, ease: [0.2, 0.8, 0.2, 1] as const };
 
 type StepName = 'where' | 'count' | 'wings';
 
 const STEP_ORDER: StepName[] = ['where', 'count', 'wings'];
 
 const WHERE_OPTIONS: Array<{ value: BugLocation; label: string }> = [
-  { value: 'kitchen', label: 'In the kitchen' },
-  { value: 'bathroom', label: 'In the bathroom' },
-  { value: 'basement', label: 'In the basement' },
-  { value: 'attic', label: 'In the attic' },
-  { value: 'living-area', label: 'In a bedroom or living room' },
-  { value: 'exterior', label: 'At a window, door, or outside wall' },
+  { value: 'kitchen', label: 'Kitchen' },
+  { value: 'bathroom', label: 'Bathroom' },
+  { value: 'basement', label: 'Basement' },
+  { value: 'attic', label: 'Attic' },
+  { value: 'living-area', label: 'Bedroom or living room' },
+  { value: 'exterior', label: 'Window, door, or outside wall' },
 ];
 
 const COUNT_OPTIONS: Array<{ value: BugGroupSize; label: string }> = [
-  { value: 'few', label: 'Just one or two' },
-  { value: 'group', label: 'A few, scattered around' },
-  { value: 'trail', label: 'Following each other in a line' },
+  { value: 'few', label: 'One or two' },
+  { value: 'group', label: 'A few, scattered' },
+  { value: 'trail', label: 'Following in a line' },
 ];
 
 const WINGS_OPTIONS: Array<{ value: TriageWings; label: string }> = [
-  { value: 'live-wings', label: 'It had wings' },
-  { value: 'shed-wings', label: 'Just shed wings nearby' },
+  { value: 'live-wings', label: 'Had wings' },
+  { value: 'shed-wings', label: 'Detached wings' },
   { value: 'no-wings', label: 'No wings' },
   { value: 'unsure', label: "Couldn't tell" },
 ];
@@ -91,68 +96,33 @@ export default function Triage() {
     advance(isLast ? null : STEP_ORDER[index + 1]);
   }
 
+  const stepOptions: Array<{ value: string; label: string }> =
+    stepName === 'where' ? WHERE_OPTIONS
+      : stepName === 'count' ? COUNT_OPTIONS
+      : WINGS_OPTIONS;
+
+  useSetPageTitle(STEP_LABEL[stepName]);
+
   return (
-    <div className="pt-2 pb-6 flex flex-col gap-6">
-        <header className="text-center">
-          <h1 className="text-xl font-semibold leading-tight">{STEP_LABEL[stepName]}</h1>
-        </header>
-
-          {stepName === 'where' && (
-            <ChoiceList>
-              {WHERE_OPTIONS.map((opt) => (
-                <Choice
-                  key={opt.value}
-                  onClick={() => handleSelect(opt.value)}
-                >
-                  {opt.label}
-                </Choice>
-              ))}
-            </ChoiceList>
-          )}
-
-          {stepName === 'count' && (
-            <ChoiceList>
-              {COUNT_OPTIONS.map((opt) => (
-                <Choice
-                  key={opt.value}
-                  onClick={() => handleSelect(opt.value)}
-                >
-                  {opt.label}
-                </Choice>
-              ))}
-            </ChoiceList>
-          )}
-
-          {stepName === 'wings' && (
-            <ChoiceList>
-              {WINGS_OPTIONS.map((opt) => (
-                <Choice
-                  key={opt.value}
-                  onClick={() => handleSelect(opt.value)}
-                >
-                  {opt.label}
-                </Choice>
-              ))}
-            </ChoiceList>
-          )}
+    <div className="pb-6 flex flex-col gap-6">
+      <CardStack>
+        <AnimatePresence mode="popLayout" initial={false}>
+          {stepOptions.map((opt, i) => (
+            <motion.div
+              key={`slot-${i}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={stepTransition}
+            >
+              <Card onClick={() => handleSelect(opt.value)} className="text-left">
+                <CardText title={opt.label} />
+              </Card>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </CardStack>
     </div>
   );
 }
 
-function ChoiceList({ children }: { children: ReactNode }) {
-  return <div className="flex flex-col gap-2">{children}</div>;
-}
-
-function Choice({
-  onClick,
-  children,
-}: {
-  onClick: () => void;
-  children: string;
-}) {
-  return (
-    <Card onClick={onClick} className="text-left">
-      <CardText title={children} />
-    </Card>
-  );
-}

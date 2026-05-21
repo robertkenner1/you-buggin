@@ -10,7 +10,7 @@ type CardTextProps = {
 export function CardText({ title, subtitle }: CardTextProps) {
   return (
     <div className="flex-1 min-w-0">
-      <div className="font-medium leading-tight">{title}</div>
+      <div className="font-normal leading-tight">{title}</div>
       {subtitle && (
         <div className="text-sm text-muted leading-snug pt-1">{subtitle}</div>
       )}

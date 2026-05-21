@@ -6,15 +6,17 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { bugById } from '../data/bugs';
 import { Illustration } from '../components/Illustration';
 import { Silhouette } from '../components/Silhouette';
+import { useSetPageTitle } from '../components/PageHeader';
 
 export default function BugDetail() {
   const { id = '' } = useParams();
   const bug = bugById(id);
+  useSetPageTitle(bug?.commonName ?? "Couldn't find that one.");
+  const [zoomOpen, setZoomOpen] = useState(false);
 
   if (!bug) {
     return (
-      <div className="pt-10 flex flex-col gap-4">
-        <h2 className="text-xl font-normal">Couldn't find that one.</h2>
+      <div className="pb-6 flex flex-col gap-4">
         <Link to="/" className="btn-secondary">
           Start over
         </Link>
@@ -23,15 +25,10 @@ export default function BugDetail() {
   }
 
   const showFooter = bug.recommendPro;
-  const [zoomOpen, setZoomOpen] = useState(false);
 
   return (
     <>
-    <article className={`pt-2 ${showFooter ? 'pb-24' : 'pb-6'} flex flex-col gap-8 min-w-0`}>
-        <header className="text-center">
-          <h1 className="text-xl font-semibold leading-tight">{bug.commonName}</h1>
-        </header>
-
+    <article className={`${showFooter ? 'pb-24' : 'pb-6'} flex flex-col gap-8 min-w-0`}>
         <div className="grid grid-cols-2 gap-2 min-w-0">
           <button
             type="button"

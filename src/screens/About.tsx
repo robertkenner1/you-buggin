@@ -1,10 +1,10 @@
-export default function About() {
-  return (
-    <article className="pt-2 pb-6 flex flex-col gap-6 min-w-0">
-      <header className="text-center">
-        <h1 className="text-xl font-semibold leading-tight">About</h1>
-      </header>
+import { useSetPageTitle } from '../components/PageHeader';
 
+export default function About() {
+  useSetPageTitle('About');
+
+  return (
+    <article className="pb-6 flex flex-col gap-6 min-w-0">
       <section className="flex flex-col gap-3">
         <h5 className="text-base font-semibold">The story</h5>
         <p className="text-base leading-relaxed">

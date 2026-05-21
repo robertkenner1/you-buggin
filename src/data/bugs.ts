@@ -46,7 +46,7 @@ export const bugs: Bug[] = [
       'Single node between thorax and abdomen with evenly rounded thorax',
       'Elbowed antennae; front wings longer than hind wings on swarmers',
     ],
-    whatItMeans: 'Often a sign of damp wood in the structure.',
+    whatItMeans: 'They like damp wood.',
     howToSpotIt: [
       'Foraging at night along trails, often on counters or near sinks',
       'Coarse sawdust-like frass piled near baseboards, sills, or voids',
@@ -79,7 +79,7 @@ export const bugs: Bug[] = [
       '12-segmented antennae with no club and uneven, humped thorax profile',
       'Single hidden node on the petiole, tucked under the abdomen',
     ],
-    whatItMeans: 'Following a sugar source and moisture.',
+    whatItMeans: 'They follow sugar and moisture.',
     howToSpotIt: [
       'Fast-moving single-file trails along counters, baseboards, and pipes',
       'Indoors near moisture: dishwashers, sinks, water heaters, wall voids',
@@ -112,7 +112,7 @@ export const bugs: Bug[] = [
       'Two-segment petiole and two small upward spines on rear thorax',
       'Has a functional stinger, though rarely uses it on people',
     ],
-    whatItMeans: 'Usually a colony nesting under the slab.',
+    whatItMeans: 'They nest under slabs and pavement.',
     howToSpotIt: [
       'Trails coming up through cracks in concrete slabs, garages, basements',
       'Small piles of sand or soil pushed up at slab seams and sidewalk joints',
@@ -145,7 +145,7 @@ export const bugs: Bug[] = [
       'Straight bead-like antennae, not elbowed',
       'Blind, pale, and translucent compared to ants',
     ],
-    whatItMeans: 'Could mean an active colony in the wood.',
+    whatItMeans: 'They eat wood from inside, near soil.',
     howToSpotIt: [
       'Inside pencil-thick mud tubes on foundation walls or sills',
       'In hollowed wood near basements, crawlspaces, or slab edges',
@@ -178,7 +178,7 @@ export const bugs: Bug[] = [
       'Wings nearly twice as long as the body',
       'Broad waist and straight (not elbowed) antennae',
     ],
-    whatItMeans: 'Could mean a mature colony in the structure.',
+    whatItMeans: 'They swarm from mature termite colonies.',
     howToSpotIt: [
       'Swarming indoors near windows and doors, drawn to light',
       'Piles of shed, equal-length wings on sills or floors',
@@ -211,7 +211,7 @@ export const bugs: Bug[] = [
       'Front wings clearly longer than hind wings; usually tinted brown',
       'Body color varies by species: black, brown, or reddish',
     ],
-    whatItMeans: 'Usually a mature ant colony swarming to mate.',
+    whatItMeans: 'They swarm from mature ant colonies.',
     howToSpotIt: [
       'Sudden indoor swarms at windows and light fixtures in spring or late summer',
       'Piles of discarded wings on sills after a swarm has dispersed',
@@ -244,7 +244,7 @@ export const bugs: Bug[] = [
       'Light and dark banding on exposed edges of the abdomen',
       'Smooth shoulders (not toothed or spined like some native species)',
     ],
-    whatItMeans: 'Overwintering visitors. No damage indoors.',
+    whatItMeans: 'They overwinter inside walls and attics.',
     howToSpotIt: [
       'Gathering on sunny south- and west-facing walls in September and October',
       'Crawling out from baseboards, window trim, and ceiling fixtures',
@@ -277,7 +277,7 @@ export const bugs: Bug[] = [
       'Red-orange margins on the basal half of the wings',
       'Bright red abdomen; nymphs are bright red with black legs',
     ],
-    whatItMeans: 'Harmless overwintering visitors.',
+    whatItMeans: 'They overwinter on sunny walls.',
     howToSpotIt: [
       'Massing on south-facing walls, rocks, and tree trunks in fall sun',
       'Clustered around boxelder, ash, and maple trees in the growing season',
@@ -310,7 +310,7 @@ export const bugs: Bug[] = [
       "Females' last leg pair nearly twice the body length",
       'Total appearance 3 to 4 inches including legs and antennae',
     ],
-    whatItMeans: 'Harmless predator. Signals other insects inside.',
+    whatItMeans: 'They hunt other indoor bugs.',
     howToSpotIt: [
       'Darting across bathroom, basement, or laundry floors at night',
       'In damp areas: floor drains, crawl spaces, cement block walls',
@@ -343,7 +343,7 @@ export const bugs: Bug[] = [
       'Antennae as long as the body',
       'Three tail-like bristles trailing from the rear',
     ],
-    whatItMeans: 'Excess humidity somewhere in the home.',
+    whatItMeans: 'They like humid spots and paper.',
     howToSpotIt: [
       'In cool, damp basements, bathrooms, and under sinks',
       'Darting rapidly (including sideways) when a light flips on',
@@ -376,7 +376,7 @@ export const bugs: Bug[] = [
       'Cylindrical abdomen about three times longer than wide',
       'Two clusters of light eyes plus small dark eyes in front',
     ],
-    whatItMeans: 'Harmless. Likes undisturbed corners.',
+    whatItMeans: 'They web in quiet corners.',
     howToSpotIt: [
       'Hanging upside down in loose, irregular webs in corners',
       'In cellars, garages, closets, and quiet ceiling corners',
@@ -409,7 +409,7 @@ export const bugs: Bug[] = [
       'Stout, hairy legs, sometimes faintly banded',
       'Eight eyes with two large prominent ones facing forward',
     ],
-    whatItMeans: 'Usually a single wanderer, not an infestation.',
+    whatItMeans: 'They wander in from outside in fall.',
     howToSpotIt: [
       'Running across floors, basements, or garages at night',
       'Most often seen indoors in fall as they seek overwintering shelter',
@@ -442,7 +442,7 @@ export const bugs: Bug[] = [
       'Mature larvae 1/2 to 5/8 inch, cream to pinkish or greenish with brown head',
       'Larvae produce loose silken webbing in infested food',
     ],
-    whatItMeans: 'Likely an infested package in the pantry.',
+    whatItMeans: 'They hatch inside pantry goods.',
     howToSpotIt: [
       'Adults flutter weakly around kitchen walls and ceilings at night',
       'Larvae crawl up walls or along ceiling edges seeking pupation sites',
@@ -475,7 +475,7 @@ export const bugs: Bug[] = [
       'Distinctive bright red eyes',
       'Slow, hovering flight rather than darting',
     ],
-    whatItMeans: 'Something fermenting nearby.',
+    whatItMeans: "They're drawn to fermenting food.",
     howToSpotIt: [
       'Hovering in clouds over ripe bananas, tomatoes, or onions on the counter',
       'Around recycling bins, trash cans, compost, beer or wine glasses',
@@ -508,7 +508,7 @@ export const bugs: Bug[] = [
       'Body and wings densely covered in long hairs, giving a mothlike look',
       'Wings held roof-like over the body at rest',
     ],
-    whatItMeans: 'Usually organic gunk in a drain.',
+    whatItMeans: 'They breed in drain gunk.',
     howToSpotIt: [
       'Resting motionless on bathroom walls, ceilings, or beside drains',
       'Around floor drains, shower drains, and rarely-used sinks',
@@ -541,7 +541,7 @@ export const bugs: Bug[] = [
       'Wings overlap flat across the back at rest',
       'Sluggish, clumsy flight compared to a housefly',
     ],
-    whatItMeans: 'Overwintering in wall and attic voids.',
+    whatItMeans: 'They overwinter in wall and attic voids.',
     howToSpotIt: [
       'Clustered on sunny windows and warm walls on mild fall and late-winter days',
       'Buzzing in attics, behind curtains, around recessed lights and window frames',
@@ -574,7 +574,7 @@ export const bugs: Bug[] = [
       'Claw-like forceps (cerci) at the tip of the abdomen',
       'Males have curved pincers; females have straighter ones',
     ],
-    whatItMeans: 'Wandering in from damp spots outside.',
+    whatItMeans: 'They wander in from damp spots outside.',
     howToSpotIt: [
       'Active at night; hiding in cracks and crevices by day',
       'In damp spots: basements, bathrooms, under sinks, door thresholds',

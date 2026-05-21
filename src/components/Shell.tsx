@@ -29,7 +29,7 @@ export function Shell({ children }: ShellProps) {
             className="fixed bottom-0 inset-x-0 bg-canvas"
           >
             <div className="mx-auto max-w-app px-5 py-4 text-center text-sm text-muted">
-              Built by Bobby
+              Bobby built it
               {' · '}
               <Link to="/about">About</Link>
             </div>

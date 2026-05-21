@@ -4,22 +4,28 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Shell } from './components/Shell';
 import { ScrollToTop } from './components/ScrollToTop';
+import { PageHeader, PageHeaderProvider } from './components/PageHeader';
 import Triage from './screens/Triage';
 import Results from './screens/Results';
 import BugDetail from './screens/BugDetail';
 import Inspectors from './screens/Inspectors';
 import About from './screens/About';
 
-const fadeTransition = { duration: 0.32, ease: [0.2, 0.8, 0.2, 1] as const };
+const fadeTransition = { duration: 0.18, ease: [0.2, 0.8, 0.2, 1] as const };
 
 export default function App() {
   const location = useLocation();
+  const routeKey = location.pathname.startsWith('/triage/')
+    ? '/triage'
+    : location.pathname;
   return (
-    <Shell>
+    <PageHeaderProvider>
+      <Shell>
       <ScrollToTop />
-      <AnimatePresence mode="wait" initial={false}>
+      <PageHeader />
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
-          key={location.pathname}
+          key={routeKey}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -39,6 +45,7 @@ export default function App() {
       </AnimatePresence>
       <Analytics />
       <SpeedInsights />
-    </Shell>
+      </Shell>
+    </PageHeaderProvider>
   );
 }

@@ -4,7 +4,9 @@ import { track } from '@vercel/analytics';
 import { inspectors } from '../data/inspectors';
 import type { Inspector, InspectorCounty } from '../data/inspectors';
 import { Card } from '../components/Card';
+import { CardStack } from '../components/CardStack';
 import { CardText } from '../components/CardText';
+import { useSetPageTitle } from '../components/PageHeader';
 
 const COUNTY_ORDER: InspectorCounty[] = ['Westchester', 'Rockland', 'Putnam', 'Fairfield'];
 
@@ -26,18 +28,15 @@ function pickOnePerCounty(all: Inspector[]): Inspector[] {
 
 export default function Inspectors() {
   const sorted = useMemo(() => pickOnePerCounty(inspectors), []);
+  useSetPageTitle('Call an exterminator');
 
   return (
-    <div className="pt-2 pb-6 flex flex-col gap-6">
-      <header className="text-center">
-        <h1 className="text-xl font-semibold leading-tight">Call an exterminator</h1>
-      </header>
-
-      <ul className="flex flex-col gap-2">
+    <div className="pb-6 flex flex-col gap-6">
+      <CardStack>
         {sorted.map((inspector) => (
           <InspectorRow key={inspector.id} inspector={inspector} />
         ))}
-      </ul>
+      </CardStack>
     </div>
   );
 }
@@ -64,14 +63,12 @@ function InspectorRow({ inspector }: { inspector: Inspector }) {
     });
   };
   return (
-    <li>
-      <Card href={telHref} onClick={handleCall} className="gap-3">
-        <CardText
-          title={inspector.name}
-          subtitle={`${inspector.city}, ${inspector.state}`}
-        />
-        <PhoneGlyph />
-      </Card>
-    </li>
+    <Card href={telHref} onClick={handleCall} className="gap-3">
+      <CardText
+        title={inspector.name}
+        subtitle={`${inspector.city}, ${inspector.state}`}
+      />
+      <PhoneGlyph />
+    </Card>
   );
 }
